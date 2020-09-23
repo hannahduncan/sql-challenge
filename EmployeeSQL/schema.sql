@@ -1,9 +1,9 @@
-DROP TABLE department;
-DROP TABLE dept_emp;
-DROP TABLE employee;
-DROP TABLE manager;
-DROP TABLE salary;
-DROP TABLE title;
+DROP TABLE department CASCADE;
+DROP TABLE dept_emp CASCADE ;
+DROP TABLE employee CASCADE ;
+DROP TABLE manager CASCADE ;
+DROP TABLE salary CASCADE ;
+DROP TABLE title CASCADE ;
 
 CREATE TABLE department (
 	id CHAR(4) NOT NULL,
@@ -50,6 +50,8 @@ ALTER TABLE manager
 	ADD PRIMARY KEY(emp_id);
 ALTER TABLE salary
 	ADD PRIMARY KEY(emp_id);
+ALTER TABLE title
+	ADD PRIMARY KEY(title_id);
 	
 ALTER TABLE dept_emp
 	ADD FOREIGN KEY(emp_id) REFERENCES employee(emp_id);
